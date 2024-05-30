@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<!-- property 값 설정 -->
-	<property name="LOG_PATH" value="/home/ubuntu/log/" />
-	<property name="LOG_FILE_NAME" value="With-Festa-devlog" />
+	<property name="LOG_PATH" value="/Users/3791h/Documents/" />
+	<property name="LOG_FILE_NAME" value="logback" />
 	<property name="LOG_PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{35} - %msg%n" />
 	
 	<!-- Console Appender -->
@@ -40,9 +40,11 @@
 		</rollingPolicy>
 	</appender>
 	
-	<root level="INFO">
-		<appender-ref ref="ConsoleAppender"/>
-		<appender-ref ref="FileAppender" />
-	</root>
+    <springprofile name="local">
+		<root level="INFO">
+			<appender-ref ref="ConsoleAppender"/>
+			<appender-ref ref="FileAppender" />
+  		</root>
+    </springprofile> 
   
 </configuration>
