@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.festa.api.service.DataApiService;
 import com.app.festa.module.ConnectionModule;
 
+import io.swagger.v3.oas.annotations.Operation;
+
 @RestController
 @RequestMapping("/data")
 public class DataApiController {
@@ -32,13 +34,14 @@ public class DataApiController {
 	 * @return
 	 * @throws Exception
 	 */
+	@Operation(summary = "행사 데이터 조회 API", description = "statrIndex : 시작 인덱스, endIndex : 종료 인덱스 // 행사 정보를 인덱스로 불러오는 API, 1번 호출시 최대 1000개씩 조회 가능 ")
 	@GetMapping("/eventInfo")
-	public String getEventInfoData(@RequestParam String startData, @RequestParam String endData) {
+	public String getEventInfoData(@RequestParam String startIndex, @RequestParam String endIndex) {
 		
 		HashMap<String,Object> paramMap = new HashMap<>();
 		
-		paramMap.put("startData", startData);
-		paramMap.put("endData", endData);
+		paramMap.put("startIndex", startIndex);
+		paramMap.put("endIndex", endIndex);
 		
 		logger.info("행사정보 API 행사정보 동기화 시작");
 		try {

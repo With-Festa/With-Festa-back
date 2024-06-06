@@ -24,7 +24,7 @@ public class ConnectionModule {
 		
 		String apiKey = "43716950626d616736324153517043";
 		
-		String connection_url = "http://openapi.seoul.go.kr:8088/" + apiKey + "/json/culturalEventInfo/"+paramMap.get("startData") + "/" + paramMap.get("endData");
+		String connection_url = "http://openapi.seoul.go.kr:8088/" + apiKey + "/json/culturalEventInfo/"+paramMap.get("startIndex") + "/" + paramMap.get("endIndex");
         
 		try {
 			 URL url = new URL(connection_url);
