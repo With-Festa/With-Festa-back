@@ -24,17 +24,27 @@ public class MainServiceImpl implements MainService {
 		
 		Logger logger = LoggerFactory.getLogger(this.getClass());
 		
-		List<CultureEventInfo> cultureEventInfoList = null;
-		
-		String codeGroup = cultureEventInfo.getCodeGroup();
-		String isFreeCode = cultureEventInfo.getIsFreeCode();
-		String guName = cultureEventInfo.getGuName();
-		String thema = cultureEventInfo.getThema();
-		Date strtDate = cultureEventInfo.getStrtDate();
-		Date endDate = cultureEventInfo.getEndDate();
-		String title = cultureEventInfo.getTitle();
+		String codeGroup = "";
+		String isFreeCode ="";
+		String guName = "";
+		String thema = "";
+		Date strtDate = null;
+		Date endDate = null;
+		String title = "";
 		String strtDateS ="";
 		String endDateS = "";
+		
+		List<CultureEventInfo> cultureEventInfoList = null;
+		if(cultureEventInfo != null) {
+			codeGroup = cultureEventInfo.getCodeGroup();
+			isFreeCode = cultureEventInfo.getIsFreeCode();
+			guName = cultureEventInfo.getGuName();
+			thema = cultureEventInfo.getThema();
+			strtDate = cultureEventInfo.getStrtDate();
+			endDate = cultureEventInfo.getEndDate();
+			title = cultureEventInfo.getTitle();
+		}
+		
 		 
 		
 		try {

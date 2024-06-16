@@ -5,9 +5,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.festa.main.service.MainService;
@@ -33,10 +33,10 @@ public class MainController {
 	 * @throws Exception
 	 * 
 	 * */
-	@Operation(summary = "기본 메인 화면 조회", description = " 사용하는 파라미터 : codeGroup, isFreeCode, guName, thema, title, strtDate, endDate 외의 나머지 파림터는 필요 없음")
+	@Operation(summary = "기본 메인 화면 조회", description = " 사용하는 파라미터 : codeGroup, isFreeCode, guName, thema, title, strtDate, endDate 외의 나머지 파라미터는 필요 없음")
 	@ApiResponse(responseCode = "200", description = "OK")
-	@PostMapping("/cultureEventInfo")
-	public List<CultureEventInfo> getCultureEventInfo( @RequestBody CultureEventInfo cultureEventInfo ){
+	@GetMapping("/cultureEventInfo")
+	public List<CultureEventInfo> getCultureEventInfo( @RequestParam(required = false) CultureEventInfo cultureEventInfo ){
 		
 		List<CultureEventInfo> cultureEventInfoList = null;
 		
